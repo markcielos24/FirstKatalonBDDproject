@@ -1,4 +1,5 @@
 package operations
+
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -49,5 +50,10 @@ class Minus {
 	@When("(\\d+) minus (\\d+)")
 	def minus(long firstOperand, long secondOperand) {
 		WebUI.callTestCase(findTestCase("Test Cases/common/Minus number"), [ ('firstOperand') : firstOperand, ('secondOperand') : secondOperand ], FailureHandling.STOP_ON_FAILURE)
+	}
+	
+	@And("reverse test (\\d+)")
+	def reverseTest(int nextOperand) {
+		println(nextOperand)
 	}
 }
